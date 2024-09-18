@@ -1,1 +1,256 @@
 
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message for Zarith Ayrisya</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #000428, #004e92);
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 0 0 10px white, 0 0 20px white;
+            animation: star-fall 10s linear infinite;
+        }
+
+        @keyframes star-fall {
+            from {
+                transform: translateY(-100vh);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #ff6f61;
+            transform: rotate(45deg);
+            animation: beat 1.5s infinite ease-in-out;
+            cursor: pointer;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #ff6f61;
+        }
+
+        .heart:before {
+            top: -100px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 100px;
+            top: 0;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1) rotate(45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(45deg);
+            }
+        }
+
+        .moving-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .moving-heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff6f61;
+            transform: rotate(45deg);
+            animation: move-heart 10s linear infinite, spin 4s linear infinite;
+        }
+
+        @keyframes move-heart {
+            0% {
+                transform: translateX(0) translateY(100vh) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100vw) translateY(-100vh) rotate(45deg);
+            }
+        }
+
+        @keyframes spin {
+            0%, 100% {
+                transform: rotate(45deg);
+            }
+            50% {
+                transform: rotate(225deg);
+            }
+        }
+
+        .wrapper {
+            position: relative;
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+            z-index: 2;
+            animation: text-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes text-glow {
+            from {
+                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+            }
+            to {
+                text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+            }
+        }
+
+        .wrapper .text {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid white;
+            animation: typing 6s steps(30, end), blink .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+
+        .wrapper .shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+            opacity: 0;
+            animation: shadow-glow 3s infinite;
+        }
+
+        @keyframes shadow-glow {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Additional message styling */
+        .additional-message {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- Generating multiple stars in the background -->
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+    </div>
+
+    <div class="heart" id="heart"></div>
+
+    <div class="moving-hearts">
+        <!-- Generating multiple moving hearts -->
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+        <div class="moving-heart"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="text">I love you Zarith Ayrisya</div>
+        <div class="shadow">I love you Zarith Ayrisya</div>
+        <div class="additional-message" id="additional-message">I'd wanna be next to you</div>
+    </div>
+
+    <script>
+        // JavaScript to handle the click event on the heart
+        document.getElementById('heart').addEventListener('click', function() {
+            var message = document.getElementById('additional-message');
+            message.style.display = 'block';  // Show the additional message
+        });
+    </script>
+</body>
+</html>
